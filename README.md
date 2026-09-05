@@ -33,12 +33,14 @@ DELETE /movies/{id}
 
 ## PROGRAM CODE (Main Files):
 ### application.properties
+```
 spring.datasource.url=jdbc:h2:mem:testdb
 spring.datasource.driverClassName=org.h2.Driver
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
+```
 ### Movie.java
-
+```
 @Entity
 public class Movie {
     @Id
@@ -56,7 +58,10 @@ java
 Copy
 Edit
 public interface MovieRepository extends JpaRepository<Movie, Long> {}
+```
+
 ### MovieController.java
+```
 @RestController
 @RequestMapping("/movies")
 public class MovieController {
@@ -99,3 +104,30 @@ public class MovieController {
         }).orElse(ResponseEntity.notFound().build());
     }
 }
+```
+
+### OUTPUT:
+
+### POST /movies
+
+<img width="1378" height="713" alt="646697155-cb6b928c-bd83-46f8-9d0c-56d59dca9458" src="https://github.com/user-attachments/assets/c1bf1aaa-f7ac-4fd7-b377-9d66ff6a0cc5" />
+
+### GET /movies
+
+<img width="1376" height="746" alt="646697192-a8e5f47c-c46f-4769-8021-783a71105744" src="https://github.com/user-attachments/assets/88a164a4-9dda-4066-a639-033e6eed1f2e" />
+
+
+### PUT /movies
+
+<img width="1377" height="743" alt="646697220-4d773863-62f3-4ec2-9fb1-04fef45ffeed" src="https://github.com/user-attachments/assets/bd01be95-e6db-4dae-aa06-16c59cf143c0" />
+
+
+### DELETE /movies
+
+
+<img width="1377" height="745" alt="image" src="https://github.com/user-attachments/assets/40690bb6-37d6-4386-a424-606227376042" />
+
+
+### RESULT
+
+Thus the development of a Spring Boot application to store and retrieve data from a Movies database is completed successfully.
